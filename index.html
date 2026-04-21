@@ -349,8 +349,14 @@
       transition: transform 0.45s ease;
     }
 
+    .quote .carousel {
+      width: 100%;
+      overflow: hidden;
+    }
+
     .quote .carousel-track {
       align-items: stretch;
+      width: 100%;
     }
 
     .carousel-slide {
@@ -361,7 +367,9 @@
 
     .quote .carousel-slide {
       display: block;
-      padding-right: 0;
+      min-width: 100%;
+      max-width: 100%;
+      overflow: hidden;
     }
 
     .carousel-slide img {
@@ -443,12 +451,14 @@
       right: 60px;
       top: 22px;
       transform: none;
+      z-index: 5;
     }
 
     .quote .carousel-button.next {
       right: 10px;
       top: 22px;
       transform: none;
+      z-index: 5;
     }
 
     .quote .quote-mark:last-of-type {
@@ -546,6 +556,8 @@
       justify-content: center;
       height: 100%;
       overflow: hidden;
+      position: relative;
+      isolation: isolate;
     }
 
     .quote-mark {
@@ -565,7 +577,9 @@
       font-size: 1.18rem;
       line-height: 1.9;
       max-width: 100%;
+      width: 100%;
       padding-right: 110px;
+      overflow-wrap: break-word;
     }
 
     .quote-meta {
@@ -573,6 +587,7 @@
       color: var(--muted);
       font-size: 0.95rem;
       padding-right: 110px;
+      overflow-wrap: break-word;
     }
 
     .dots {
