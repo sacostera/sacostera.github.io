@@ -1,113 +1,970 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Fornalutx Family House | Mallorca</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sa Costera Fornalutx | Family House in Mallorca</title>
+  <meta
+    name="description"
+    content="Authentic Mallorcan family house in Fornalutx with terraces, garden and mountain views. A warm, timeless stay in the heart of Mallorca."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
   <style>
+    :root {
+      --bg: #f4efe8;
+      --bg-soft: #f8f4ee;
+      --card: #fbf8f3;
+      --sand: #e8ddcf;
+      --sand-deep: #d8c7b3;
+      --olive: #465a33;
+      --olive-dark: #314124;
+      --text: #262622;
+      --muted: #68655f;
+      --line: rgba(38, 38, 34, 0.11);
+      --white: #ffffff;
+      --shadow: 0 14px 40px rgba(48, 39, 27, 0.08);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --container: 1240px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f3ed;
-      color: #333;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
-    header {
-      background: #e9dcc8;
-      padding: 60px 20px;
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .section-title,
+    .hero-title,
+    .card-title,
+    .quote-title,
+    .brand-mark {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      letter-spacing: -0.02em;
+      line-height: 0.98;
+      font-weight: 500;
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 3vw, 3.6rem);
+      margin: 12px 0 18px;
+    }
+
+    .hero-title {
+      font-size: clamp(3.3rem, 7vw, 6.6rem);
+      margin: 22px 0 20px;
+      max-width: 620px;
+    }
+
+    .lead {
+      font-size: 1.09rem;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.9;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(248, 244, 238, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(38, 38, 34, 0.06);
+    }
+
+    .header-inner {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      min-width: 180px;
+    }
+
+    .brand-mark {
+      font-size: 2rem;
+      line-height: 0.9;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-sub {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #3f3d38;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav a:hover {
+      opacity: 0.62;
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--olive);
+      color: var(--white);
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .header-cta:hover,
+    .button-primary:hover,
+    .button-secondary:hover,
+    .ghost-link:hover {
+      transform: translateY(-1px);
+    }
+
+    .header-cta:hover,
+    .button-primary:hover {
+      background: var(--olive-dark);
+    }
+
+    .hero {
+      padding: 36px 0 10px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.45fr;
+      background: rgba(255, 255, 255, 0.34);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid rgba(38, 38, 34, 0.06);
+    }
+
+    .hero-copy {
+      padding: 74px 58px 62px;
+      background: rgba(248, 244, 238, 0.94);
+    }
+
+    .hero-divider {
+      width: 64px;
+      height: 1px;
+      background: rgba(38, 38, 34, 0.22);
+      margin: 28px 0 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .button-primary,
+    .button-secondary,
+    .ghost-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 12px;
+      padding: 16px 22px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .button-primary {
+      background: var(--olive);
+      color: var(--white);
+    }
+
+    .button-secondary {
+      background: transparent;
+      border-color: rgba(70, 90, 51, 0.35);
+      color: var(--olive);
+    }
+
+    .button-secondary:hover,
+    .ghost-link:hover {
+      border-color: var(--olive);
+      color: var(--olive-dark);
+    }
+
+    .hero-media {
+      position: relative;
+      min-height: 680px;
+      background: linear-gradient(140deg, #e7d6c1 0%, #dfccb6 100%);
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .features-strip {
+      background: rgba(255, 255, 255, 0.55);
+      border-top: 1px solid rgba(38, 38, 34, 0.06);
+      border-bottom: 1px solid rgba(38, 38, 34, 0.06);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+    }
+
+    .feature {
+      padding: 34px 28px 30px;
+      border-right: 1px solid rgba(38, 38, 34, 0.08);
       text-align: center;
     }
-    h1 {
-      font-size: 36px;
+
+    .feature:last-child {
+      border-right: 0;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      margin: 0 auto 18px;
+      color: var(--olive);
+      opacity: 0.92;
+    }
+
+    .feature h3 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+      line-height: 1.9;
+    }
+
+    .section {
+      padding: 84px 0;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(38, 38, 34, 0.06);
+    }
+
+    .card-media {
+      aspect-ratio: 1.15 / 0.82;
+      background: linear-gradient(135deg, #eadac6 0%, #d9c0a4 100%);
+      overflow: hidden;
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 28px 28px 30px;
+    }
+
+    .card-title {
+      font-size: 2.1rem;
+      margin: 0 0 14px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .ghost-link {
+      margin-top: 22px;
+      padding: 0;
+      color: #a56e2f;
+      border: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      justify-content: flex-start;
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .split-panel {
+      background: rgba(255, 255, 255, 0.58);
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(38, 38, 34, 0.06);
+      min-height: 320px;
+    }
+
+    .split-content {
+      padding: 48px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .split-image {
+      min-height: 320px;
+      background: linear-gradient(135deg, #d8c2a6, #f1e6d7);
+    }
+
+    .split-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .quote {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .quote-mark {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 6rem;
+      line-height: 0.7;
+      color: rgba(38, 38, 34, 0.14);
+      margin-bottom: 20px;
+    }
+
+    .quote-title {
+      font-size: 3rem;
+      margin: 0 0 18px;
+    }
+
+    .quote-text {
+      font-size: 1.18rem;
+      line-height: 1.9;
+      max-width: 450px;
+    }
+
+    .quote-meta {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .dots {
+      display: flex;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(38, 38, 34, 0.18);
+    }
+
+    .dot.active {
+      background: var(--olive);
+    }
+
+    .facts-strip {
+      border-top: 1px solid rgba(38, 38, 34, 0.08);
+      border-bottom: 1px solid rgba(38, 38, 34, 0.08);
+      background: rgba(255, 255, 255, 0.48);
+    }
+
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .fact {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 26px 28px;
+      border-right: 1px solid rgba(38, 38, 34, 0.08);
+    }
+
+    .fact:last-child {
+      border-right: 0;
+    }
+
+    .fact h4 {
+      margin: 0 0 4px;
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .fact p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .fact .icon {
+      width: 34px;
+      height: 34px;
+      margin: 2px 0 0;
+      flex: 0 0 34px;
+    }
+
+    .cta-section {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #f6f1ea 0%, #f1ebe2 100%);
+    }
+
+    .cta-section::before,
+    .cta-section::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      top: 18px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    .cta-section::before {
+      left: -28px;
+      background-image: radial-gradient(circle at 30% 30%, rgba(70, 90, 51, 0.12), transparent 40%),
+        linear-gradient(140deg, transparent 20%, rgba(70, 90, 51, 0.15) 21%, transparent 22%),
+        linear-gradient(160deg, transparent 35%, rgba(70, 90, 51, 0.15) 36%, transparent 37%),
+        linear-gradient(120deg, transparent 50%, rgba(70, 90, 51, 0.15) 51%, transparent 52%);
+      border-radius: 50%;
+      filter: blur(0.5px);
+    }
+
+    .cta-section::after {
+      right: -60px;
+      top: 40px;
+      background-image: radial-gradient(circle at 70% 30%, rgba(70, 90, 51, 0.09), transparent 38%),
+        linear-gradient(150deg, transparent 40%, rgba(70, 90, 51, 0.12) 41%, transparent 42%),
+        linear-gradient(130deg, transparent 58%, rgba(70, 90, 51, 0.12) 59%, transparent 60%);
+      border-radius: 50%;
+      transform: scaleX(-1);
+    }
+
+    .cta-inner {
+      position: relative;
+      text-align: center;
+      padding: 62px 20px 68px;
+    }
+
+    .cta-inner .section-title {
       margin-bottom: 10px;
     }
-    h2 {
-      margin-top: 40px;
+
+    .cta-inner p {
+      margin: 0 auto;
+      max-width: 580px;
+      color: var(--muted);
+      font-size: 1.08rem;
     }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 28px;
     }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
+
+    .site-footer {
+      background: #f1ebe2;
+      border-top: 1px solid rgba(38, 38, 34, 0.08);
     }
-    .box {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
+
+    .footer-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+      color: var(--muted);
     }
-    .cta {
-      text-align: center;
-      margin: 40px 0;
+
+    .footer-links,
+    .footer-icons {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      flex-wrap: wrap;
     }
-    .button {
-      background: #333;
-      color: white;
-      padding: 12px 20px;
-      text-decoration: none;
-      border-radius: 8px;
+
+    .footer-icons a {
+      display: inline-flex;
+      width: 20px;
+      height: 20px;
+      color: var(--muted);
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #eee;
-      margin-top: 40px;
+
+    @media (max-width: 1180px) {
+      .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .feature:nth-child(3),
+      .feature:nth-child(6) {
+        border-right: 0;
+      }
+
+      .cards-grid,
+      .facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .fact:nth-child(2) {
+        border-right: 0;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 0;
+      }
+
+      .nav {
+        justify-content: flex-start;
+        gap: 16px 20px;
+      }
+
+      .hero-grid,
+      .cards-grid,
+      .split-grid,
+      .facts-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 48px 30px 42px;
+      }
+
+      .hero-media {
+        min-height: 440px;
+      }
+
+      .feature,
+      .fact {
+        border-right: 0;
+        border-bottom: 1px solid rgba(38, 38, 34, 0.08);
+      }
+
+      .feature:last-child,
+      .fact:last-child {
+        border-bottom: 0;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .split-content {
+        padding: 38px 28px;
+      }
+
+      .quote-title {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(var(--container), calc(100% - 24px));
+      }
+
+      .hero {
+        padding-top: 18px;
+      }
+
+      .hero-title {
+        font-size: 3.3rem;
+      }
+
+      .section {
+        padding: 62px 0;
+      }
+
+      .cards-grid {
+        gap: 18px;
+      }
+
+      .card-body,
+      .cta-inner,
+      .split-content {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .button-primary,
+      .button-secondary,
+      .header-cta {
+        width: 100%;
+      }
+
+      .hero-actions,
+      .cta-actions {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
-
 <body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Sa Costera Fornalutx home">
+        <div class="brand-mark">SA COSTERA</div>
+        <div class="brand-sub">Fornalutx</div>
+      </a>
 
-<header>
-  <h1>Stay in an authentic family house in Fornalutx</h1>
-  <p>A cozy historic townhouse with garden, terraces and mountain views – perfect for up to 6 guests.</p>
-  <div class="cta">
-    <a href="#contact" class="button">Request availability</a>
-  </div>
-</header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#house">The House</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#location">Location</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#good-to-know">Good to Know</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-<div class="container">
+      <a class="header-cta" href="#contact">Check availability</a>
+    </div>
+  </header>
 
-  <h2>Why guests love it</h2>
-  <div class="features">
-    <div class="box">🏡 Authentic Mallorcan character</div>
-    <div class="box">🌿 Garden & terraces</div>
-    <div class="box">👨‍👩‍👧‍👦 Perfect for families</div>
-    <div class="box">⛰️ Beautiful mountain views</div>
-  </div>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Authentic Mallorcan living</div>
+          <h1 class="hero-title">A family house in the heart of Fornalutx</h1>
+          <div class="hero-divider"></div>
+          <p class="lead">
+            A 400-year-old townhouse with garden, terraces and mountain views. Perfect for families and friends looking for a warm, timeless stay in one of Mallorca’s most beautiful villages.
+          </p>
 
-  <h2>The house</h2>
-  <p>
-    Our 400-year-old townhouse offers space, charm, and a relaxed atmosphere in the heart of Fornalutx.
-    With 3 bedrooms, 3.5 bathrooms, several terraces and a garden, it’s ideal for families or friends.
-  </p>
+          <div class="hero-actions">
+            <a class="button-primary" href="https://wa.me/34600000000" target="_blank" rel="noopener noreferrer">
+              <span>WhatsApp us</span>
+            </a>
+            <a class="button-secondary" href="mailto:hello@sacostera.com">Email us</a>
+          </div>
+        </div>
 
-  <h2>Location</h2>
-  <p>
-    Located in one of Mallorca’s most beautiful villages, surrounded by the Tramuntana mountains.
-    Walk to cafés, restaurants, and shops. The beach at Port de Sóller is just a short drive away.
-  </p>
+        <div class="hero-media">
+          <img src="hero.jpg" alt="Terrace of Sa Costera in Fornalutx with mountain views" />
+        </div>
+      </div>
+    </section>
 
-  <h2>Good to know</h2>
-  <ul>
-    <li>Access involves a short walk with stairs</li>
-    <li>No air conditioning (fans available)</li>
-    <li>Best suited for guests comfortable with stairs</li>
-  </ul>
+    <section class="features-strip" id="amenities">
+      <div class="container features-grid">
+        <article class="feature">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V21h13V9.5"></path><path d="M9.5 21v-6h5v6"></path>
+          </svg>
+          <h3>Authentic</h3>
+          <p>A historic Mallorcan townhouse full of original character and family warmth.</p>
+        </article>
+        <article class="feature">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21V10"></path><path d="M8 13c-2.2 0-4-1.8-4-4 2.2 0 4 1.8 4 4Z"></path><path d="M16 13c0-2.2 1.8-4 4-4 0 2.2-1.8 4-4 4Z"></path><path d="M7 21h10"></path><path d="M8.5 21c0-3.3 1.6-5 3.5-5s3.5 1.7 3.5 5"></path>
+          </svg>
+          <h3>Outdoor living</h3>
+          <p>Garden, terraces and open-air dining with mountain light and summer calm.</p>
+        </article>
+        <article class="feature">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="3"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a3 3 0 0 1 0 5.74"></path>
+          </svg>
+          <h3>Family friendly</h3>
+          <p>Perfect for up to 6 guests, with space to gather and enough room to unwind.</p>
+        </article>
+        <article class="feature">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 20 9 8l3 4 4-7 5 15"></path><path d="M2 20h20"></path>
+          </svg>
+          <h3>Great location</h3>
+          <p>Right in the heart of Fornalutx, close to cafés, walks, and Port de Sóller.</p>
+        </article>
+        <article class="feature">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          <h3>Summer vibes</h3>
+          <p>Light, calm and unhurried, designed for slow breakfasts and long evenings.</p>
+        </article>
+        <article class="feature">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m12 17.27-5.18 2.73 1-5.81L3.64 9.97l5.84-.85L12 3.84l2.52 5.28 5.84.85-4.18 4.22 1 5.81z"></path>
+          </svg>
+          <h3>Personal touch</h3>
+          <p>A real family home, with thoughtful details and local recommendations for your stay.</p>
+        </article>
+      </div>
+    </section>
 
-  <h2 id="contact">Request your stay</h2>
-  <p>Send us a message with your dates and we’ll get back to you:</p>
-  <p><strong>Email: your@email.com</strong></p>
+    <section class="section" id="house">
+      <div class="container cards-grid">
+        <article class="card">
+          <div class="card-media">
+            <img src="house.jpg" alt="Living room in the house with soft natural light" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">The House</h2>
+            <p>
+              3 bedrooms, 3.5 bathrooms, a fully equipped kitchen, generous shared spaces and several terraces spread across different levels.
+            </p>
+            <a class="ghost-link" href="#contact">Read more →</a>
+          </div>
+        </article>
 
-</div>
+        <article class="card" id="gallery">
+          <div class="card-media">
+            <img src="outdoor.jpg" alt="Outdoor terrace dining area with flowers and mountain views" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Outdoor Living</h2>
+            <p>
+              Enjoy slow mornings and long evenings in the garden and on the terraces with beautiful views over Fornalutx and the mountains.
+            </p>
+            <a class="ghost-link" href="#contact">Read more →</a>
+          </div>
+        </article>
 
-<footer>
-  <p>Fornalutx, Mallorca • Family holiday home</p>
-</footer>
+        <article class="card">
+          <div class="card-media">
+            <img src="bedroom.jpg" alt="Bedroom with clean Mediterranean styling and natural light" />
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Rest & Relax</h2>
+            <p>
+              Comfortable bedrooms designed for a calm night’s sleep, with a soft Mediterranean palette and timeless, understated style.
+            </p>
+            <a class="ghost-link" href="#contact">Read more →</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
+    <section class="section" id="location" style="padding-top: 0;">
+      <div class="container split-grid">
+        <article class="split-panel">
+          <div class="split-content">
+            <div class="eyebrow">Location</div>
+            <h2 class="section-title">The perfect location</h2>
+            <p class="lead" style="max-width: 460px;">
+              Fornalutx is a hidden gem in the Tramuntana mountains. Walk to cafés, restaurants and shops, or head out directly for hiking. The beach at Port de Sóller is just a short drive away.
+            </p>
+            <div style="margin-top: 28px;">
+              <a class="button-secondary" href="#contact" style="width: fit-content;">Explore the area</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="split-panel">
+          <div class="split-image">
+            <img src="location.jpg" alt="Stone street in Fornalutx with mountain backdrop" />
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="reviews" style="padding-top: 0;">
+      <div class="container split-grid">
+        <article class="split-panel">
+          <div class="split-content quote">
+            <h2 class="quote-title">What our guests say</h2>
+            <div class="quote-mark">“</div>
+            <div class="quote-text">
+              The most beautiful house in the most beautiful village. We felt at home from the first minute. Thank you!
+            </div>
+            <div class="quote-meta">— The Jensen Family, Denmark</div>
+            <div class="dots" aria-label="Review slider indicator">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="split-panel">
+          <div class="split-content" style="justify-content: center;">
+            <div class="eyebrow">Why it feels special</div>
+            <h2 class="section-title">Timeless, warm, and quietly memorable</h2>
+            <p class="lead" style="max-width: 480px;">
+              The house blends family warmth, village beauty, and relaxed summer rhythm. It is the kind of place guests remember for how it felt, not just where it was.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="facts-strip" id="good-to-know">
+      <div class="container facts-grid">
+        <article class="fact">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 19h16"></path><path d="M8 19v-4"></path><path d="M12 15v-4"></path><path d="M16 11V7"></path>
+          </svg>
+          <div>
+            <h4>Stairs</h4>
+            <p>The house is spread over several levels and includes stairs.</p>
+          </div>
+        </article>
+        <article class="fact">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2v20"></path><path d="M6 6c0 3.3 2.7 6 6 6"></path><path d="M18 6c0 3.3-2.7 6-6 6"></path><path d="M6 18c0-3.3 2.7-6 6-6"></path><path d="M18 18c0-3.3-2.7-6-6-6"></path>
+          </svg>
+          <div>
+            <h4>No air conditioning</h4>
+            <p>The house stays naturally cool. Fans are provided for warmer months.</p>
+          </div>
+        </article>
+        <article class="fact">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21s7-4.35 7-11a7 7 0 1 0-14 0c0 6.65 7 11 7 11Z"></path><circle cx="12" cy="10" r="2.5"></circle>
+          </svg>
+          <div>
+            <h4>Parking</h4>
+            <p>Public parking is available close to the village.</p>
+          </div>
+        </article>
+        <article class="fact">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4"></path><path d="M8 3v4"></path><path d="M3 11h18"></path>
+          </svg>
+          <div>
+            <h4>Minimum stay</h4>
+            <p>Adjust this line to your real booking rules and preferred season length.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+      <div class="container cta-inner">
+        <div class="eyebrow">Contact</div>
+        <h2 class="section-title">Ready to make memories?</h2>
+        <p>We’d love to welcome you to our home in Fornalutx. Message us directly for availability, questions, or a relaxed first chat about your stay.</p>
+        <div class="cta-actions">
+          <a class="button-primary" href="https://wa.me/34600000000" target="_blank" rel="noopener noreferrer">WhatsApp us</a>
+          <a class="button-secondary" href="mailto:hello@sacostera.com">Email us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="#top" class="brand" aria-label="Sa Costera Fornalutx home" style="min-width:auto;">
+        <div class="brand-mark" style="font-size:1.6rem;">SA COSTERA</div>
+        <div class="brand-sub">Fornalutx</div>
+      </a>
+
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+      </div>
+
+      <div class="footer-icons">
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="4"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.5 6.5h.01"></path>
+          </svg>
+        </a>
+        <a href="mailto:hello@sacostera.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
