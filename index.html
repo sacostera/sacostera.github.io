@@ -392,6 +392,19 @@
       right: 14px;
     }
 
+    .quote .carousel-button.prev {
+      left: auto;
+      right: 60px;
+      top: 18px;
+      transform: none;
+    }
+
+    .quote .carousel-button.next {
+      right: 10px;
+      top: 18px;
+      transform: none;
+    }
+
     .carousel-dots {
       position: absolute;
       left: 50%;
@@ -772,6 +785,10 @@
       .cta-actions {
         flex-direction: column;
       }
+
+      #amenities .container > div > div:last-child {
+        grid-template-columns: 1fr !important;
+      }
     }
   </style>
 </head>
@@ -804,6 +821,17 @@
           <div class="eyebrow">Authentic Mallorcan living</div>
           <h1 class="hero-title">A family house in the heart of Fornalutx</h1>
           <div class="hero-divider"></div>
+          <div style="display:flex; flex-wrap:wrap; gap:12px 18px; margin: 0 0 24px; color: var(--text); font-weight: 600; font-size: 1rem;">
+            <span>Entire home in Fornalutx</span>
+            <span style="color: var(--muted);">•</span>
+            <span>Up to 6 guests</span>
+            <span style="color: var(--muted);">•</span>
+            <span>3 bedrooms</span>
+            <span style="color: var(--muted);">•</span>
+            <span>4 beds</span>
+            <span style="color: var(--muted);">•</span>
+            <span>3.5 bathrooms</span>
+          </div>
           <p class="lead">
             A 400-year-old townhouse with garden, terraces and mountain views. Perfect for families and friends looking for a warm, timeless stay in one of Mallorca’s most beautiful villages.
           </p>
@@ -823,49 +851,20 @@
     </section>
 
     <section class="features-strip" id="amenities">
-      <div class="container features-grid">
-        <article class="feature">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V21h13V9.5"></path><path d="M9.5 21v-6h5v6"></path>
-          </svg>
-          <h3>Authentic</h3>
-          <p>A historic Mallorcan townhouse full of original character and family warmth.</p>
-        </article>
-        <article class="feature">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 21V10"></path><path d="M8 13c-2.2 0-4-1.8-4-4 2.2 0 4 1.8 4 4Z"></path><path d="M16 13c0-2.2 1.8-4 4-4 0 2.2-1.8 4-4 4Z"></path><path d="M7 21h10"></path><path d="M8.5 21c0-3.3 1.6-5 3.5-5s3.5 1.7 3.5 5"></path>
-          </svg>
-          <h3>Outdoor living</h3>
-          <p>Garden, terraces and open-air dining with mountain light and summer calm.</p>
-        </article>
-        <article class="feature">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="3"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a3 3 0 0 1 0 5.74"></path>
-          </svg>
-          <h3>Family friendly</h3>
-          <p>Perfect for up to 6 guests, with space to gather and enough room to unwind.</p>
-        </article>
-        <article class="feature">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 20 9 8l3 4 4-7 5 15"></path><path d="M2 20h20"></path>
-          </svg>
-          <h3>Great location</h3>
-          <p>Right in the heart of Fornalutx, close to cafés, walks, and Port de Sóller.</p>
-        </article>
-        <article class="feature">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>
-          </svg>
-          <h3>Summer vibes</h3>
-          <p>Light, calm and unhurried, designed for slow breakfasts and long evenings.</p>
-        </article>
-        <article class="feature">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m12 17.27-5.18 2.73 1-5.81L3.64 9.97l5.84-.85L12 3.84l2.52 5.28 5.84.85-4.18 4.22 1 5.81z"></path>
-          </svg>
-          <h3>Personal touch</h3>
-          <p>A real family home, with thoughtful details and local recommendations for your stay.</p>
-        </article>
+      <div class="container" style="padding: 42px 0;">
+        <div style="max-width: 780px; margin: 0 auto; background: rgba(255,255,255,0.72); border: 1px solid rgba(38,38,34,0.08); border-radius: 28px; box-shadow: var(--shadow); padding: 32px 28px;">
+          <div class="eyebrow">Amenities</div>
+          <h2 class="section-title" style="font-size: clamp(2rem, 3vw, 3rem); margin-bottom: 10px;">What you can expect</h2>
+          <p class="lead" style="max-width: 100%; margin-bottom: 24px;">Mountain and valley views, a fully equipped kitchen, Wi‑Fi, cable TV, free street parking nearby, and washer and dryer access in the house.</p>
+          <div style="display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px 18px;">
+            <div style="padding:14px 16px; background: var(--bg-soft); border-radius: 16px; border: 1px solid rgba(38,38,34,0.06);">Mountain and valley views</div>
+            <div style="padding:14px 16px; background: var(--bg-soft); border-radius: 16px; border: 1px solid rgba(38,38,34,0.06);">Fully equipped kitchen</div>
+            <div style="padding:14px 16px; background: var(--bg-soft); border-radius: 16px; border: 1px solid rgba(38,38,34,0.06);">Fast Wi‑Fi</div>
+            <div style="padding:14px 16px; background: var(--bg-soft); border-radius: 16px; border: 1px solid rgba(38,38,34,0.06);">Cable TV</div>
+            <div style="padding:14px 16px; background: var(--bg-soft); border-radius: 16px; border: 1px solid rgba(38,38,34,0.06);">Free street parking nearby</div>
+            <div style="padding:14px 16px; background: var(--bg-soft); border-radius: 16px; border: 1px solid rgba(38,38,34,0.06);">Washer and dryer in the house</div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -965,7 +964,7 @@
     <section class="section" id="reviews" style="padding-top: 0;">
       <div class="container split-grid">
         <article class="split-panel">
-          <div class="split-content quote">
+          <div class="split-content quote" style="padding-top: 82px; position: relative;">
             <h2 class="quote-title">What our guests say</h2>
             <div class="carousel" data-review-carousel>
               <div class="carousel-track">
@@ -1036,7 +1035,7 @@
           </svg>
           <div>
             <h4>Parking</h4>
-            <p>Public parking is available close to the village.</p>
+            <p>Public parking is about a 5 minute walk from the house.</p>
           </div>
         </article>
         <article class="fact">
@@ -1045,7 +1044,7 @@
           </svg>
           <div>
             <h4>Minimum stay</h4>
-            <p>Adjust this line to your real booking rules and preferred season length.</p>
+            <p>Minimum stay is 7 nights unless otherwise agreed.</p>
           </div>
         </article>
       </div>
